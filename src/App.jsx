@@ -5,17 +5,6 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Stock Inventory</h1>
-      </header>
-      
-      <main>
-        
-      </main>
-
-      <footer>
-        <p>&copy; 2024 Inova. Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 }
