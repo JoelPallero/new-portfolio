@@ -14,7 +14,7 @@ const DynamicForm = ({ formType }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formFields); // Aquí procesas los datos del formulario
+    console.log(formFields); // Acá estoy procesando los datos del formulario
   };
 
   return (

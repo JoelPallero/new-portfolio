@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const db = require('./dbConfig');
+const db = require('./config/dbConfig');
 const authRoutes = require('./routes/auth');
 
 const app = express();
@@ -21,7 +21,7 @@ db.connect((err) => {
 
 
 app.use('api/auth', authRoutes);
-const portFolioRoutes = require('./routes/portfolio');
+const portFolioRoutes = require('./api/portfolio');
 app.use('/api/portfolio', portFolioRoutes);
 
 

@@ -1,0 +1,72 @@
+.card-whatsapp-container {
+  background-color: var(--lime);
+  opacity: 1;
+  background-image: linear-gradient(30deg, #91b639 12%, transparent 12.5%, transparent 87%, #91b639 87.5%, #91b639), linear-gradient(150deg, #91b639 12%, transparent 12.5%, transparent 87%, #91b639 87.5%, #91b639), linear-gradient(30deg, #91b639 12%, transparent 12.5%, transparent 87%, #91b639 87.5%, #91b639), linear-gradient(150deg, #91b639 12%, transparent 12.5%, transparent 87%, #91b639 87.5%, #91b639), linear-gradient(60deg, #91b63977 25%, transparent 25.5%, transparent 75%, #91b63977 75%, #91b63977), linear-gradient(60deg, #91b63977 25%, transparent 25.5%, transparent 75%, #91b63977 75%, #91b63977);
+  background-size: 26px 46px;
+  background-position: 0 0, 0 0, 13px 23px, 13px 23px, 0 0, 13px 23px;
+}
+
+.card-code-container {
+  background-color: var(--orange);
+  opacity: 1;
+  background: linear-gradient(135deg, #e3622e55 25%, transparent 25%) -13px 0/ 26px 26px, linear-gradient(225deg, #e3622e 25%, transparent 25%) -13px 0/ 26px 26px, linear-gradient(315deg, #e3622e55 25%, transparent 25%) 0px 0/ 26px 26px, linear-gradient(45deg, #e3622e 25%, #f46c38 25%) 0px 0/ 26px 26px;
+}
+
+.card-code-container,
+.card-whatsapp-container {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: var(--light-shadow);
+  transition: box-shadow .2s ease-in-out;
+
+}
+
+.whats-container {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.whats-container p {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--bg-body-color);
+
+}
+
+.whats-icon-container {
+  width: 30px;
+  height: 30px;
+}
+
+.whats-icon-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.arrow-container svg {
+  transition: all .2s ease-in-out;
+}
+
+.card-whatsapp-container:hover,
+.card-code-container:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+.card-whatsapp-container:hover .arrow-container svg,
+.card-code-container:hover .arrow-container svg {
+  transform: translateX(10px);
+}

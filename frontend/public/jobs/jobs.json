@@ -1,0 +1,31 @@
+{
+  "maranatha": [
+    {
+      "id": 1,
+      "slug": "maranatha",
+      "name": "Maranatha",
+      "website": "https://maranatha.com.ar/",
+      "workDone": "Website Maintenance",
+      "shortDescription": "I made some adjustment in a few sections of the website",
+      "tools": [],
+      "screenshot": "/captures/capture-maranatha.png",
+      "logo": "/logos/logo-maranatha",
+      "workDate": "",
+      "contractType": "Freelance"
+    }
+  ],
+  "fundacionEsperanza": [
+    {
+      "id": 1,
+      "slug": "fundacion-esperanza",
+      "name": "Fundación Esperanza",
+      "website": "https://fundacionesperanza.com.ar/",
+      "workDone": "Design & Develpoment",
+      "tools": [],
+      "screenshot": "",
+      "logo": "",
+      "workDate": "",
+      "contractType": "Freelance"
+    }
+  ]
+}

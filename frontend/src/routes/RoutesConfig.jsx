@@ -1,18 +1,18 @@
-import {Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 //pages
 import Home from '../pages/Home';
 import About from '../pages/About';
-import Portfolio from '../pages/Portfolio';
 import Contact from '../pages/Contact';
-import JobDetail from '../pages/Portfolio/JobDetail';
+import Portfolio from '../pages/portfolio/Portfolio';
+import JobDetail from '../pages/portfolio/JobDetails';
 
 // private routes authenticator component
 import PrivateRoute from '../components/auth/PrivateRoute';
 
 //private routes
 import Account from '../pages/Account';
-import Dashboard from '../components/account/AccountDashboard';
+import Dashboard from '../components/account/Dashboard';
 import ManageLanguages from '../components/account/ManageLanguages'
 import ManagePersonalInfo from '../components/account/ManagePersonalInfo';
 import ManagePortfolio from '../components/account/ManagePortfolio';
@@ -23,6 +23,7 @@ import Login from '../pages/public/Login';
 import ResetPassword from '../pages/public/ResetPassword';
 
 
+
 const RoutesConfig = () => {
   return (
     <Routes>
@@ -30,8 +31,10 @@ const RoutesConfig = () => {
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
+
       <Route path="/portfolio" element={<Portfolio/>}/>
-      <Route path="/job-detail" element={<JobDetail/>}/>
+      <Route path="/portfolio/job-detail/:id" element={<JobDetail/>}/>
+
       <Route path="/login" element={<Login/>}/>
       <Route path="/reset-password" element={<ResetPassword/>}/>
       {/* End public routes */}
