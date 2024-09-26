@@ -1,4 +1,3 @@
-import IconImage from "./IconImage";
 import ArrowRight from "../icons/ArrowRight";
 import Whatsapp from "../icons/Whatsapp";
 import Code from "../icons/Code";
@@ -9,9 +8,10 @@ import '../../styles/components/buttons/cardButton.css'
 
 const CardButton = ({link, iconKey, text}) => {
   const targetBlank = iconKey == "whatsapp" ? "_blank" : ""
+  const iconclass = iconKey === "whatsapp" ? "whatsapp fixed-ws-button" : iconKey
   return (
 
-    <div className={`card-${iconKey}-container`}>
+    <div className={`card-${iconclass}`}>
       <Link 
         to={link} 
         target={targetBlank} 

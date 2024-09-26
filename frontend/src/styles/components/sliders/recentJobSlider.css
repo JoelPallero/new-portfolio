@@ -1,0 +1,7 @@
+.slide-selector-container{
+  width: 100%;
+  height: 150px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}

@@ -16,7 +16,7 @@ Variables
 :root {
   /* text colors */
   --title-color: #ffffff;
-  --title-secondary-color: #f4f4f4;
+  --title-secondary-color: #bbbbbb;
   --title-terciary-color: #303030;
   --title-four-color: #151312;
   --title-enfasis-color: #606060;
@@ -32,6 +32,7 @@ Variables
   /* enfasis colors */
   --orange: #f46c38;
   --lime: #a5ce46;
+  --violet: #6b2594;
 
   /*light theme Shadows*/
   --portfolio-footer-item: 0 0 4px 4px rgba(0, 0, 0, 0.5);
@@ -39,7 +40,7 @@ Variables
   --ff-primary: "Poppins", sans-serif;
   --ff-secondary: "Roboto", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.25rem;
+  --spacing: 0.1rem;
   --radius: 0.5rem;
   --light-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   --dark-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3);
@@ -145,7 +146,7 @@ p {
 #root{
   position: relative;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1080px;
   height: auto;
   padding-top: 20px;
 }

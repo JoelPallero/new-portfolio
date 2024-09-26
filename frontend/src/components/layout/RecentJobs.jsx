@@ -1,17 +1,24 @@
+//components
 import BigTitles from "../titles/BigTitles";
+import RecentJobSlider from '../layoutJob/RecentJobSlider';
 
-import RecentJobSlider from '../manageJobs/sliders/RecentJobSlider'
-
+//styles
+import '../../styles/components/layoutStyle/recentJobs.css'
 
 const RecentJobs = () => {
   return (
     <>
-      <BigTitles
-        firstText="recent"
-        secondText="projects"       
-        backSpace={false}
-      />
-      <RecentJobSlider/>
+      <div className="recent-job-layout">
+        <BigTitles
+          firstText="recent"
+          secondText="projects"       
+          backSpace={false}
+        />
+        <RecentJobSlider
+          quantity={4}
+          order="asc"
+        />
+      </div>
     </>
   );
 }

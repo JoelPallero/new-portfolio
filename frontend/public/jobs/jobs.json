@@ -1,20 +1,20 @@
 {
   "maranatha": [
     {
-      "id": 1,
+      "id": 0,
       "slug": "maranatha",
       "name": "Maranatha",
       "website": "https://maranatha.com.ar/",
       "workDone": "Website Maintenance",
       "shortDescription": "I made some adjustment in a few sections of the website",
       "tools": [],
-      "screenshot": "/captures/capture-maranatha.png",
-      "logo": "/logos/logo-maranatha",
+      "screenshot": "/captures/maranatha.png",
+      "logo": "/logos/maranatha.png",
       "workDate": "",
       "contractType": "Freelance"
     }
   ],
-  "fundacionEsperanza": [
+  "fe": [
     {
       "id": 1,
       "slug": "fundacion-esperanza",
@@ -22,8 +22,162 @@
       "website": "https://fundacionesperanza.com.ar/",
       "workDone": "Design & Develpoment",
       "tools": [],
-      "screenshot": "",
-      "logo": "",
+      "screenshot": "/captures/fe.png",
+      "logo": "/logos/fe.png",
+      "workDate": "",
+      "contractType": "Freelance"
+    }
+  ],
+  "gamax-1": [
+    {
+      "id": 2,
+      "slug": "gamax",
+      "name": "Gamax",
+      "website": "https://gamax.com.ar/",
+      "workDone": "Design & Develpoment",
+      "tools": [],
+      "screenshot": "/captures/gamax.png",
+      "logo": "/logos/gamax.png",
+      "workDate": "",
+      "contractType": "Freelance"
+    }
+  ],
+  "misiones": [
+    {
+      "id": 3,
+      "slug": "misiones",
+      "name": "Misiones - Cita con la Vida",
+      "website": "https://misionescitaconlavida.com.ar/",
+      "workDone": "Redesign & develpment",
+      "tools": [],
+      "screenshot": "/captures/misiones.png",
+      "logo": "/logos/misiones.png",
+      "workDate": "2022",
+      "contractType": "Freelance"
+    }
+  ],
+  "hacer": [
+    {
+      "id": 4,
+      "slug": "hacer",
+      "name": "Hacer",
+      "website": "https://hacer.com.ar/",
+      "workDone": "Redesign & Develpoment",
+      "tools": [],
+      "screenshot": "/captures/hacer.png",
+      "logo": "/logos/hacer.png",
+      "workDate": "2023",
+      "contractType": "Freelance"
+    }
+  ],
+  "cs": [
+    {
+      "id": 5,
+      "slug": "corazon-sano",
+      "name": "Corazon Sano",
+      "website": "https://corazonsano.com.ar/",
+      "workDone": "Design & Develpoment",
+      "tools": [],
+      "screenshot": "/captures/cs.png",
+      "logo": "/logos/cs.png",
+      "workDate": "Feb 2024",
+      "contractType": "Freelance"
+    }
+  ],
+  "Inova": [
+    {
+      "id": 6,
+      "slug": "inova",
+      "name": "Inova",
+      "website": "https://inova.com/",
+      "workDone": "Design & Develpoment",
+      "tools": [],
+      "screenshot": "/captures/inova.png",
+      "logo": "/logos/inova.png",
+      "workDate": "Jun 2024",
+      "contractType": "Freelance"
+    }
+  ],
+  "met": [
+    {
+      "id": 7,
+      "slug": "met",
+      "name": "Met",
+      "website": "https://metmallorca.com/",
+      "workDone": "Functionalities & Styles",
+      "tools": [],
+      "screenshot": "/captures/met.png",
+      "logo": "/logos/met.png",
+      "workDate": "Jun 2024",
+      "contractType": "Contractor"
+    }
+  ],
+  "alianza": [
+    {
+      "id": 8,
+      "slug": "alianza-creativa",
+      "name": "Alianza Creativa",
+      "website": "https://alianzacreativa.es/",
+      "workDone": "Develpoment",
+      "tools": [],
+      "screenshot": "/captures/alianza.png",
+      "logo": "/logos/alianza.png",
+      "workDate": "Jul 2024",
+      "contractType": "Contractor"
+    }
+  ],
+  "psicologa-palma": [
+    {
+      "id": 9,
+      "slug": "psicologa-palma",
+      "name": "Psicóloga en Palma",
+      "website": "https://psicologaenpalma.es/",
+      "workDone": "Functionalities & Styles",
+      "tools": [],
+      "screenshot": "/captures/psicologa.png",
+      "logo": "/logos/psicologa.png",
+      "workDate": "Jul 2024",
+      "contractType": "Contractor"
+    }
+  ],
+  "ultrabus": [
+    {
+      "id": 10,
+      "slug": "ultrabus",
+      "name": "Ultrabus",
+      "website": "https://ultrabus.es/",
+      "workDone": "Develpoment",
+      "tools": [],
+      "screenshot": "/captures/ultrabus.png",
+      "logo": "/logos/ultrabus.png",
+      "workDate": "Jul 2024",
+      "contractType": "Contractor"
+    }
+  ],
+  "gamax-2": [
+    {
+      "id": 11,
+      "slug": "gamax",
+      "name": "Gamax",
+      "website": "https://gamax.com.ar/",
+      "workDone": "Online e-commerce",
+      "tools": [],
+      "screenshot": "/captures/gamax.png",
+      "logo": "/logos/gamax.png",
+      "workDate": "",
+      "contractType": "Freelance"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": 12,
+      "slug": "ex-portfolio",
+      "name": "Portfolio",
+      "website": "https://joelpallero.com.ar/",
+      "workDone": "Redesign & Develpoment",
+      "tools": [],
+      "screenshot": "/captures/ex-portfolio.png",
+      "logo": "/logos/portfolio.png",
       "workDate": "",
       "contractType": "Freelance"
     }

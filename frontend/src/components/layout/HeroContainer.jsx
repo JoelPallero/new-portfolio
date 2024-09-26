@@ -1,11 +1,12 @@
+
+//components
 import BigTitles from "../titles/BigTitles";
 import ExperienceSummarySection from "./ExperienceSummarySection";
-import CardSection from "./CardSection";
-
+import SkillSection from "./SkillSection";
+import ProfileCard from "./ProfileCard";
 
 //styles
 import '../../styles/components/layoutStyle/heroContainer.css'
-import ProfileCard from "./ProfileCard";
 
 const HeroContainer = ({title, subtitle, parr, backSpace}) => {
   return (
@@ -28,7 +29,7 @@ const HeroContainer = ({title, subtitle, parr, backSpace}) => {
               <ExperienceSummarySection/>
             </div>
           </article>
-          <CardSection/>
+          <SkillSection/>
         </div>
       </div>    
     </div>

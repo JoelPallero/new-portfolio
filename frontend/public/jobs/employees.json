@@ -1,0 +1,38 @@
+{
+  "freelance": [
+    {
+      "id": 0,
+      "slug": "maranatha",
+      "name": "Maranatha",
+      "website": "https://maranatha.com.ar/",
+      "workDone": "Website Maintenance",
+      "shortDescription": "I made some adjustment in a few sections of the website",
+      "tools": [],
+      "screenshot": "/captures/maranatha.png",
+      "logo": "/logos/maranatha.png",
+      "workDate": ""
+    }
+  ],
+  "contractor": [
+    {
+      "id": 0,
+      "slug": "maranatha",
+      "name": "Maranatha",
+      "website": "https://maranatha.com.ar/",
+      "workDone": "Website Maintenance",
+      "shortDescription": "I made some adjustment in a few sections of the website",
+      "tools": []
+    }
+  ],
+  "permanent position": [
+    {
+      "id": 0,
+      "slug": "maranatha",
+      "name": "Maranatha",
+      "website": "https://maranatha.com.ar/",
+      "workDone": "Website Maintenance",
+      "shortDescription": "I made some adjustment in a few sections of the website",
+      "tools": []
+    }
+  ]
+}

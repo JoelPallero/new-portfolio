@@ -1,5 +1,8 @@
 import CardButton from "../buttons/CardButton";
 
+//styles
+import '../../styles/components/layoutStyle/cardSection.css'
+
 const CardSection = () => {
   return (
     <div className="card-section">

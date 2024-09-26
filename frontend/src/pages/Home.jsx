@@ -3,6 +3,7 @@ import React from "react";
 //components
 import HeroContainer from "../components/layout/HeroContainer";
 import RecentJobs from "../components/layout/RecentJobs";
+import RecentJuli from "../components/layout/RecentJuli";
 
 
 const Home  = () => {
@@ -10,14 +11,14 @@ const Home  = () => {
 
     <>
 
-    <HeroContainer      
-      title="frontend"
-      subtitle="developer"
-      parr="I transform ideas into engaging digital experiences. With a keen eye for design and a passion for creating intuitive interfaces, I bring websites to life using modern technologies. "
-      backSpace={true}
-    />
+      <HeroContainer      
+        title="frontend"
+        subtitle="developer"
+        parr="I transform ideas into engaging digital experiences. With a keen eye for design and a passion for creating intuitive interfaces, I bring websites to life using modern technologies. "
+        backSpace={true}
+      />
 
-    <RecentJobs/>
+      <RecentJobs/>
     
     </>
 
