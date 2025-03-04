@@ -1,9 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-ract-swc';
+import path from 'path';
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/trompoagencia/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -15,4 +14,7 @@ export default defineConfig({
       '@at': '/src/assets/toolsImg',
     },
   },
+  build: {
+    outDir: path.resolve(__dirname, './dist')
+  }
 })

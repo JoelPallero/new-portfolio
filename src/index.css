@@ -19,14 +19,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body{
   width: 100%;
   height: auto;
   scroll-behavior: smooth;
-  position: relative;
-  
+  position: relative;  
 }
 
 main {

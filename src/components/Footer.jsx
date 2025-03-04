@@ -1,7 +1,4 @@
-import Menu from "@/components/Menu";
-import routesConfig from "@/config/routesConfig";
-
-import Icon from './Icons';
+import Icons from './Icons';
 
 //styles and animations, if..
  import '@as/footer.css'
@@ -12,47 +9,32 @@ const Footer = () => {
       <div className="grid-footer-container">
           <section className="footer-section">
             <a className="logo-img" href="/">
-              <Icon iconName="logo"/>
+              <Icons iconName="logo"/>
             </a>
           </section>
           <section className="footer-section">
-            <div className="footer-menu">
-              <h3>Marketing<br/>Digital</h3>
-              <Menu
-                menuType="marketingDigital"
-                routes={routesConfig}
-                classMenu="footer-menu-items"
-              />
-            </div>
-            <div className="footer-menu">
-              <h3>Desarrollo y<br/> Marca</h3>
-              <Menu
-                menuType="desarrolloWebYBranding"
-                routes={routesConfig}
-                classMenu="footer-menu-items"
-              />
-            </div>
-            <div className="footer-menu">
-              <h3>Contenidos<br/><br/></h3>
-              <Menu
-                menuType="marketingDeContenidos"
-                routes={routesConfig}
-                classMenu="footer-menu-items"
-              />
+            <div className="social-icons">
+              <a target="_blank" href="https://www.linkedin.com/in/joel-pallero/">
+                <Icons iconName="in"/>
+              </a>
+              <a target="_blank" href="https://github.com/JoelPallero?tab=repositories">
+                <Icons iconName="github"/>
+              </a>
+              <a target="_blank" href="/docs/Joel-Pallero-Resume.pdf" download="resume-joel-pallero.pdf">
+                <Icons iconName="download"/>
+              </a>
+              {/* <a target="_blank" href="https://wa.me/543512149461">
+                <Icons iconName="wsp"/>
+              </a> */}
             </div>
           </section>
 
           <section className="footer-section">
             <div className="footer-tags">
-              <p>#Marketing Digital Aplicado</p>
-              <p>#Reportes en tiempo real</p>
-              <p>#Procesos de mejora continua</p>
-              <p>#Especialistas en performance</p>
-              <div className="social-icons">
-                <Icon iconName="facebook" />
-                <Icon iconName="instagram" />
-                <Icon iconName="googleplus" />
-              </div>
+              <p>#SEO</p>
+              <p>#E-Commerce</p>
+              <p>#Landing page</p>
+              <p>#Web performance</p>
             </div>
           </section>
         </div>

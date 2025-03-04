@@ -13,41 +13,48 @@ const PortfolioSection = () => {
   } = useHoverBackground();
 
   return (
-    <div className="container portfolio-section">
-      <div
-        className="bg-section"
-        style={{
-          backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
-          opacity: backgroundImage ? opacity : 0,
-          transition: "opacity 0.3s ease-in-out",
-        }}
-      />
-
+    <div className="container portfolio-container" id="portfolio">
 
       <div className="portfolio-header">
         <h2 className="portfolio-title">Portfolio</h2>
         <p className="portfolio-excerpt">
           <br />
-          SOMO UN EQUIPO INTERDISCIPLINARIO CON MAS DE 10 AÑOS
+          I am a frontend Developer. 
           <br />
-          DE EXPERIENCIA, BRINDAMOS RESPUESTAS A TRAVES DE LAS
+          I have a degree on software development at the
           <br />
-          MEJORES HERRAMIENTAS PARA GESTIONAR LA PRESENCIA DE
+          Intituto Técnico Superior Córdoba.
           <br />
-          TU MARCA EN EL MUNDO ONLINE. NOS ENFOCAMOS EN EN-TENDER
+          Currently, I am a WordPress Developer, 
           <br />
-          LOS OBJETOS DE TUS NEGOCIOS Y CREAMOS ESTRATEGIAS
+          and I am expanding my skills by 
           <br />
-          PERSONALIZADAS QUE CONECTEN MARCAS CON AUDIENCIAS
+          learning programming frameworks 
           <br />
-          ESTRATEGICAS
+          and libraries like React.js. 
+          <br />
+          My goal is to deepen my understanding 
+          <br />
+          of these tools and achieve proficiency 
+          <br />
+          in React.js and Node.js
         </p>
       </div>
 
-      <PortfolioItems
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
-      />
+      <div className="portfolio-section">
+        <div
+          className="bg-section"
+          style={{
+            backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+            opacity: backgroundImage ? opacity : 0,
+            transition: "opacity 0.3s ease-in-out",
+          }}
+        />
+        <PortfolioItems
+          handleMouseEnter={handleMouseEnter}
+          handleMouseLeave={handleMouseLeave}
+        />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 //styles and animations
 import '@as/video-section.css';
 
-import video from '/assets/videos/volvo.mp4';
 
 
 const VideoSection = () => {

@@ -1,4 +1,4 @@
-import Icon from "./Icons";
+import Icons from "./Icons";
 
 //styles and animations
 import "@as/hero.css";
@@ -22,10 +22,9 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            somos
+            Joel
           </motion.span>
           <motion.span
-            className="bold-title"
             initial={{ y: 200 }}
             animate={{
               y: [200, 0, 0, 0, 0, 0, 0, -200],
@@ -38,12 +37,13 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            trompo
+            Pallero
           </motion.span>
         </p>
 
         <p>
           <motion.span
+            className="bold-title"
             initial={{ y: 200 }}
             animate={{
               y: [200, 0, 0, 0, 0, 0, 0, -200],
@@ -56,7 +56,7 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            una
+            Frontend
           </motion.span>
           <motion.span
             initial={{ y: 200 }}
@@ -71,27 +71,13 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            agencia
-          </motion.span>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.4,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            de
+            dev
           </motion.span>
         </p>
 
         <p>
           <motion.span
+            className="bold-title"
             initial={{ y: 200 }}
             animate={{
               y: [200, 0, 0, 0, 0, 0, 0, -200],
@@ -104,7 +90,7 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            MKT
+            Wordpress
           </motion.span>
           <motion.span
             initial={{ y: 200 }}
@@ -119,12 +105,13 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            DGTL
+            dev
           </motion.span>
         </p>
 
         <p>
           <motion.span
+            className="bold-title"
             initial={{ y: 200 }}
             animate={{
               y: [200, 0, 0, 0, 0, 0, 0, -200],
@@ -137,7 +124,7 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            SOCIAL
+            seo
           </motion.span>
           <motion.span
             initial={{ y: 200 }}
@@ -152,50 +139,31 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            MEDIA
-          </motion.span>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            &
-          </motion.span>
-        </p>
-
-        <p>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.4,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            AUDIOVISUAL
+            positioning
           </motion.span>
         </p>
       </div>
 
       {/* Íconos sociales */}
       <div className="social-icons">
-        <Icon iconName="facebook" />
-        <Icon iconName="instagram" />
-        <Icon iconName="googleplus" />
+        <a target="_blank" href="https://www.linkedin.com/in/joel-pallero/">
+          <Icons iconName="in"/>
+        </a>
+        <a target="_blank" href="https://github.com/JoelPallero?tab=repositories">
+          <Icons iconName="github"/>
+        </a>
+        <a target="_blank" href="/docs/Joel-Pallero-Resume.pdf" download="resume-joel-pallero.pdf">
+          <Icons iconName="download"/>
+        </a>
+        {/* <a target="_blank" href="https://wa.me/543512149461">
+          <Icons iconName="wsp"/>
+        </a> */}
       </div>
+
+      {/* arrow to go down */}
+      <a href="#slider-dev" className="arrow">        
+        <Icons iconName="down"/>
+      </a>
     </motion.div>
   );
 };

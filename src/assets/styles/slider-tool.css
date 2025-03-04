@@ -1,9 +1,9 @@
 
 .slider-container{
-  height: 70px;
+  height: 50px;
   display: flex;
   align-items: center;
-  background-color: #e47519;
+  background-color: #c9f31d;
   z-index: 999;
 }
 
@@ -13,7 +13,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .slider-inner {
@@ -21,12 +20,19 @@
   display: flex;
   align-items: center;
   gap: 50px;
-  animation: slide 16s infinite linear;
+  animation: slide 360s infinite linear;
 }
 
-.slider-inner img {
+.slider-inner .slider-item {
   height: 100%;
-  object-fit: cover;
+  color: #212121;
+  font-size: 28px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.slider-inner img{
+  width: 30px;
 }
 
 @keyframes slide {
@@ -40,9 +46,9 @@
 
 @media (min-width: 1366px) {
   .slider-container{
-    height: 200px;
+    height: 80px;
   }
   .slider-tool{
-    height: 36px;
+    height: 40px;
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import Menu from "@/components/Menu";
-import routesConfig from "@/config/routesConfig";
 
 import Icons from "../Icons";
 

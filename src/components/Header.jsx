@@ -29,7 +29,7 @@ const Header = ({onTogglePopup}) => {
         >
           <Icons iconName="logo"/>
         </motion.a>
-        <motion.button
+        {/* <motion.button
           className="nav-button"
           initial={{
             y: -250,
@@ -47,10 +47,10 @@ const Header = ({onTogglePopup}) => {
           }}
           onClick={onTogglePopup}
         >
-
-          <Icons iconName="burguer"/>
-
-        </motion.button>
+          <a target="_blank" href="https://wa.me/543512149461">
+            <Icons iconName="wsp2"/>
+          </a>
+        </motion.button>     */}
       </div>
     </header>
   );

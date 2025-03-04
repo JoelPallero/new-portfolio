@@ -15,7 +15,7 @@ const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
     tag,
   });
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
@@ -27,7 +27,7 @@ const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
           <motion.div
             key={index}
             className="portfolio-item"
-            onMouseEnter={() => handleMouseEnter(backgroundImage || "/logo.png")}
+            onMouseEnter={() => handleMouseEnter(backgroundImage || "/logo.svg")}
             onMouseLeave={handleMouseLeave}
             whileHover={{ scale: 1.05 }}
             onHoverStart={event => {}}

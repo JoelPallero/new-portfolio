@@ -17,13 +17,19 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
+/* 
 .nav-button {
   width: 60px;
   cursor: pointer;
-  background-color: #000000;
+  background-color: transparent;
   padding: 16px 10px 10px;
   border: none;
+} */
+
+.logo-img{
+  background-color: #242424bc;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .logo-img img {
@@ -37,10 +43,10 @@ header {
   .logo-img img {
     width: 200px;
   }
-  .nav-button {
+  /* .nav-button {
     width: 70px;
-    padding: 14px 10px;
-  }
+    padding: 10px;
+  } */
 }
 
 @media (min-width: 1024px) {
@@ -52,10 +58,10 @@ header {
     width: 200px;
   }
 
-  .nav-button {
+  /* .nav-button {
     width: 80px;
     padding: 14px 10px;
-  }
+  } */
 }
 
 @media (min-width: 1366px) {
@@ -63,8 +69,8 @@ header {
     width: 220px;
   }
 
-  .nav-button {
+  /* .nav-button {
     width: 100px;
     padding: 18px 12px;
-  }
+  } */
 }

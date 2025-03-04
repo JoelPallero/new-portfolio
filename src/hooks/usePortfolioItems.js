@@ -29,7 +29,7 @@ const usePortfolioItems = ({ quantity, category, tag }) => {
         // Si no hay categoría ni etiqueta, simplemente traemos todos los elementos disponibles
         setItems(data);
       } catch (err) {
-        setError("Hubo un problema al cargar los datos.");
+        setError("There was a problem loading more information.");
       } finally {
         setLoading(false);
       }

@@ -1,63 +1,81 @@
-import Facebook from "/assets/toolsImg/facebook-ads.png";
-import Google from "/assets/toolsImg/google-ads.png";
-import Ganalytics from "/assets/toolsImg/google-a.png";
-import GdataStudio from "/assets/toolsImg/google-data-studio.png";
-import GsearchConsole from "/assets/toolsImg/google-search-console.png";
-import Instagram from "/assets/toolsImg/instagram-ads.png";
-import Linkedin from "/assets/toolsImg/linkedin-ads.png";
-import Semrush from "/assets/toolsImg/semrush.png";
-import Supermetrics from "/assets/toolsImg/supermetrics.png";
-import Woocommerce from "/assets/toolsImg/woocommerce.png";
-import Wordpress from "/assets/toolsImg/wordpress.png";
-import Zapier from "/assets/toolsImg/zapier.png";
-
-//styles and animations
 import "@as/slider-tool.css";
-import {motion, useScroll, useSpring} from 'framer-motion'
+import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import Icons from "../Icons";
 
-const marcas = {
-  facebook: Facebook,
-  google: Google,
-  ganalytics: Ganalytics,
-  gdatastudio: GdataStudio,
-  gsearchconsole: GsearchConsole,
-  instagram: Instagram,
-  linkedin: Linkedin,
-  semrush: Semrush,
-  supermetrics: Supermetrics,
-  woocommerce: Woocommerce,
-  wordpress: Wordpress,
-  zapier: Zapier,
+const dev = {
+  html: "HTML",
+  css: "CSS",
+  php: "PHP",
+  javascript: "Javascript",
+  react: "React.js",
+  github: "Github",
+  frontend: "Frontend",
+  wordpress: "Wordpress",
+  design: "Figma",
+  html2: "HTML",
+  css2: "CSS",
+  php2: "PHP",
+  javascript2: "Javascript",
+  react2: "React.js",
+  github2: "Github",
+  frontend2: "Frontend",
+  wordpress2: "Wordpress",  
+  design2: "Figma",
+  html3: "HTML",
+  css3: "CSS",
+  php3: "PHP",
+  javascript3: "Javascript",
+  react3: "React.js",
+  github3: "Github",
+  frontend3: "Frontend",
+  wordpress3: "Wordpress",  
+  design3: "Figma",
 };
 
+const mkt = {
+  seo: "SEO",
+  analitica: "Google Analytics",
+  seo2: "SEO",
+  analitica2: "Google Analytics",
+  seo3: "SEO",
+  analitica3: "Google Analytics",
+  seo4: "SEO",
+  analitica4: "Google Analytics",
+  seo5: "SEO",
+  analitica5: "Google Analytics",
+  seo6: "SEO",
+  analitica6: "Google Analytics",
+  seo7: "SEO",
+  analitica7: "Google Analytics",
+};
 
-const ToolsSlider = () => {
-  
+const ToolsSlider = ({ place = "dev" }) => {
+  const items = place === "mkt" ? mkt : dev;
+
   return (
-    <motion.section 
+    <motion.section
       className="slider-container"
-      initial={{
-        opacity: 0,
-        scale: .5,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-      }}
-      transition={{
-        duration: .5,
-        type:'tween',
-      }}
+      id={place === "dev" ? "slider-dev" : "slider-mkt"}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, type: "tween" }}
     >
-        <div className="slider-tool">
-          <div className="slider-inner">
-            {[...Array(3)].map((_, index) =>
-              Object.entries(marcas).map(([key, src]) => (
-                <img key={`${key}-${index}`} src={src} alt={key} />
-              ))
-            )}
-          </div>
+      <div className="slider-tool">
+        <div className="slider-inner">
+          {[...Array(10)].map((_, index) =>
+            Object.entries(items).map(([key, text]) => (
+              <>
+                <span key={`${key}-${index}`} className="slider-item">
+                  {text}
+                </span>
+                {items === dev ? (<Icons iconName="dev"/>) : (<Icons iconName="grow"/>)
+                }
+              </>
+            ))
+          )}
         </div>
+      </div>
     </motion.section>
   );
 };
