@@ -21,21 +21,21 @@ const PortfolioSection = () => {
           <br />
           I am a frontend Developer. 
           <br />
-          I have a degree on software development at the
+          I have a degree on software development
           <br />
-          Intituto Técnico Superior Córdoba.
+          at the Intituto Tecnico Superior Cordoba.
           <br />
-          Currently, I am a WordPress Developer, 
+          Currently, I am a WordPress Developer,
           <br />
-          and I am expanding my skills by 
+          and I am expanding my skills by
           <br />
-          learning programming frameworks 
+          learning programming frameworks
           <br />
-          and libraries like React.js. 
+          and libraries like React.js.
           <br />
-          My goal is to deepen my understanding 
+          My goal is to deepen my understanding
           <br />
-          of these tools and achieve proficiency 
+          of these tools and achieve proficiency
           <br />
           in React.js and Node.js
         </p>
@@ -55,6 +55,7 @@ const PortfolioSection = () => {
           handleMouseLeave={handleMouseLeave}
         />
       </div>
+
     </div>
   );
 };

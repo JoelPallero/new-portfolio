@@ -32,11 +32,12 @@
 .hero-text .bold-title{
   font-weight: 800;
 }
+
 .arrow img{
   position: absolute;
-  width: 70px;
+  width: 30px;
   top: 50%;
-  right: 50px;
+  right: 10px;
   transform: translateY(-50%);
 }
 
@@ -55,6 +56,9 @@
   .hero-container{
     padding: 250px 50px 100px;
   }
+  .arrow img{
+    width: 40px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -65,6 +69,11 @@
   }
   .hero-container .social-icons img{
     width: 50px;
+  }
+  
+  .arrow img{
+    width: 50px;
+    right: 30px;
   }
 }
 
@@ -84,5 +93,9 @@
     font-size: 76px;
     line-height: 73px;
     gap: 24px;
+  }
+  .arrow img{
+    width: 70px;
+    right: 50px;
   }
 }

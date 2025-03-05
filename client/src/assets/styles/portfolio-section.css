@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  padding: 150px 20px 50px;
+  padding: 20px 0;
   gap: 150px;
 }
 
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 20px 50px 50px;
+  padding: 20px 20px 50px;
 }
 
 .bg-section {
@@ -50,13 +50,13 @@
 }
 
 .portfolio-title{
-  font-size: 120px;
+  font-size: 54px;
   text-transform: uppercase;
 }
 
 .portfolio-excerpt{
-  font-size: 23px;
-  text-align: justify;
+  font-size: 15px;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -74,6 +74,7 @@
   display: grid;
   align-content: center;
   border: 1px solid #dddddd2f;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: text-shadow .2s ease-in-out;
 }
@@ -84,9 +85,9 @@
 }
 
 .portfolio-item h2{
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 300;
   color: #ffffff;
   text-align: center;
   font-weight: 700;
@@ -95,12 +96,10 @@
 .portfolio-item:hover{
   z-index: 999;
   backdrop-filter: blur(5px);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 
-@media (min-width: 540px) {
-    
+@media (min-width: 540px) {    
   .portfolio-item h2{
     font-size: 20px;
   }
@@ -144,5 +143,9 @@
   }
   .portfolio-item h2{
     font-size: 32px;
+  }
+  .portfolio-excerpt{
+    font-size: 23px;
+    font-weight: 300;
   }
 }
