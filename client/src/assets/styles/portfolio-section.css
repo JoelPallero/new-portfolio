@@ -118,6 +118,9 @@
   .portfolio-item h2{
     font-size: 22px;
   }
+  .portfolio-title{
+    font-size: 86px;
+  }
 }
 
 @media (min-width: 980px) {    
@@ -129,6 +132,9 @@
 @media (min-width: 1024px) {    
   .portfolio-item h2{
     font-size: 28px;
+  }
+  .portfolio-title{
+    font-size: 100px;
   }
 }
 
@@ -147,5 +153,8 @@
   .portfolio-excerpt{
     font-size: 23px;
     font-weight: 300;
+  }
+  .portfolio-title{
+    font-size: 120px;
   }
 }
