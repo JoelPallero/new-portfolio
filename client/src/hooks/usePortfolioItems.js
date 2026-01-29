@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
-import PortfolioItems from '../json/portfolio.json'; // Importar el archivo JSON local
+
+const base = import.meta.env.BASE_URL?.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 
 const usePortfolioItems = ({ quantity, category, tag }) => {
   const [items, setItems] = useState([]); // Para almacenar los items
@@ -9,7 +12,8 @@ const usePortfolioItems = ({ quantity, category, tag }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let data = PortfolioItems;
+        const response = await fetch(`${base}json/portfolio.json`);
+        let data = await response.json();
 
         // Filtramos por categoría si se especifica
         if (category) {

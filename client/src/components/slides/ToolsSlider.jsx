@@ -1,6 +1,6 @@
+import React from "react";
 import "@as/slider-tool.css";
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
 import Icons from "../Icons";
 
 const dev = {
@@ -65,13 +65,12 @@ const ToolsSlider = ({ place = "dev" }) => {
         <div className="slider-inner">
           {[...Array(10)].map((_, index) =>
             Object.entries(items).map(([key, text]) => (
-              <>
-                <span key={`${key}-${index}`} className="slider-item">
+              <React.Fragment key={`${key}-${index}`}>
+                <span className="slider-item">
                   {text}
                 </span>
-                {items === dev ? (<Icons iconName="dev"/>) : (<Icons iconName="grow"/>)
-                }
-              </>
+                {items === dev ? (<Icons iconName="dev"/>) : (<Icons iconName="grow"/>)}
+              </React.Fragment>
             ))
           )}
         </div>

@@ -20,12 +20,12 @@ const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
 
   return (
     <div className="grid-portfolio">
-      {items.map((item, index) => {
+      {items.map((item) => {
         const backgroundImage = item.featured_image || "";
 
         return (
           <motion.div
-            key={index}
+            key={item.id}
             className="portfolio-item"
             onMouseEnter={() => handleMouseEnter(backgroundImage || "/logo.svg")}
             onMouseLeave={handleMouseLeave}

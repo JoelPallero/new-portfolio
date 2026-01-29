@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "@/components/Menu";
 
 import Icons from "../Icons";
+import { routesConfig } from "@/config/routes";
 
 //styles and animations
 import "@as/menuPopup.css";

@@ -1,26 +1,20 @@
-import Burguer from '/assets/icons/burguer.svg';
-import Linkedin from '/assets/icons/linkedin.svg';
-import Whatsapp from '/assets/icons/whatsapp.svg';
-import Close from '/assets/icons/close.svg';
-import Github from '/assets/icons/github.svg';
-import Download from '/assets/icons/download.svg';
-import Spark from '/assets/icons/spark.svg';
-import Grow from '/assets/icons/grow.svg';
-import Down from '/assets/icons/down.png';
-import Dev from '/assets/icons/dev.svg';
 import Logo from '@a/logo.svg';
 
+const base = import.meta.env.BASE_URL?.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 const icons = {
-  burguer: Burguer,
-  wsp: Whatsapp,
-  in: Linkedin,
-  close: Close,
-  down: Down,
-  github: Github,
-  download: Download,
-  dev: Dev,
-  grow: Grow,
-  spark: Spark,
+  burguer: `${base}assets/icons/burguer.svg`,
+  wsp: `${base}assets/icons/whatsapp.svg`,
+  in: `${base}assets/icons/linkedin.svg`,
+  close: `${base}assets/icons/close.svg`,
+  down: `${base}assets/icons/down.png`,
+  github: `${base}assets/icons/github.svg`,
+  download: `${base}assets/icons/download.svg`,
+  dev: `${base}assets/icons/dev.svg`,
+  grow: `${base}assets/icons/grow.svg`,
+  spark: `${base}assets/icons/spark.svg`,
   logo: Logo,
 };
 

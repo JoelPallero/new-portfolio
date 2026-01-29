@@ -6,6 +6,10 @@ import Icons from './Icons';
 import '@as/header.css'
 import { motion } from "framer-motion";
 
+const base = import.meta.env.BASE_URL?.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 const Header = ({onTogglePopup}) => {
   const [showPopuup, setShowPopup] = useState(false);
 
@@ -14,7 +18,7 @@ const Header = ({onTogglePopup}) => {
       <div className="container header-container">
         <motion.a
           className="logo-img"
-          href="/"
+          href={`${base}`}
           initial={{
             y: -250,
           }}

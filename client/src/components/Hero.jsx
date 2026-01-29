@@ -5,6 +5,10 @@ import "@as/hero.css";
 import "@as/social-icons.css";
 import { motion } from "framer-motion";
 
+const base = import.meta.env.BASE_URL?.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 const Hero = () => {
   return (
     <motion.div className="container hero-container">
@@ -124,7 +128,7 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            seo
+            +3
           </motion.span>
           <motion.span
             initial={{ y: 200 }}
@@ -139,7 +143,7 @@ const Hero = () => {
               times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
             }}
           >
-            positioning
+            years
           </motion.span>
         </p>
       </div>
@@ -152,7 +156,7 @@ const Hero = () => {
         <a target="_blank" href="https://github.com/JoelPallero?tab=repositories">
           <Icons iconName="github"/>
         </a>
-        <a target="_blank" href="/docs/Joel-Pallero-Resume.pdf" download="resume-joel-pallero.pdf">
+        <a target="_blank" href={`${base}docs/Joel-Pallero-Resume.pdf`} download="resume-joel-pallero.pdf">
           <Icons iconName="download"/>
         </a>
         {/* <a target="_blank" href="https://wa.me/543512149461">
