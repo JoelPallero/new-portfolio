@@ -19,7 +19,7 @@ const icons = {
   logo: Logo,
 };
 
-const Icons = memo(({iconName}) => {
+const Icons = memo(({ iconName }) => {
   const iconSrc = icons[iconName];
   if (!iconSrc) return null;
 
@@ -41,10 +41,12 @@ const Icons = memo(({iconName}) => {
   const isDecorative = iconName !== "down" && iconName !== "close";
 
   return (
-    <img 
-      src={iconSrc} 
-      alt={altText} 
+    <img
+      src={iconSrc}
+      alt={altText}
       aria-hidden={isDecorative}
+      width={iconName === "logo" ? "200" : "36"}
+      height={iconName === "logo" ? "100" : "36"}
     />
   );
 });

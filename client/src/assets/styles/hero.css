@@ -1,4 +1,4 @@
-.hero-container{
+.hero-container {
   height: 100%;
   background: linear-gradient(to right, #242424 50%, #303030);
   display: flex;
@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.hero-text *{
+.hero-text * {
   text-transform: uppercase;
 }
 
@@ -25,17 +25,18 @@
   letter-spacing: 1px;
 }
 
-.hero-text > p > span{
+.hero-text>p>span {
   overflow: hidden;
 }
 
-.hero-text .bold-title{
+.hero-text .bold-title {
   font-weight: 800;
 }
 
-.arrow img{
+.arrow img {
   position: absolute;
   width: 30px;
+  height: 150px;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
@@ -53,32 +54,37 @@
     font-size: 48px;
     line-height: 54px;
   }
-  .hero-container{
+
+  .hero-container {
     padding: 250px 50px 100px;
   }
-  .arrow img{
+
+  .arrow img {
     width: 40px;
+    height: 250px;
+    right: 50px;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-text p{
+  .hero-text p {
     font-size: 54px;
     line-height: 60px;
     gap: 24px;
   }
-  .hero-container .social-icons img{
+
+  .hero-container .social-icons img {
     width: 50px;
   }
-  
-  .arrow img{
+
+  .arrow img {
     width: 50px;
-    right: 30px;
+    height: 250px;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-text p{
+  .hero-text p {
     font-size: 54px;
     line-height: 60px;
     gap: 24px;
@@ -86,16 +92,18 @@
 }
 
 @media (min-width: 1366px) {
-  .hero-container{
+  .hero-container {
     height: 100dvh;
   }
-  .hero-text p{
+
+  .hero-text p {
     font-size: 76px;
     line-height: 73px;
     gap: 24px;
   }
-  .arrow img{
+
+  .arrow img {
     width: 70px;
-    right: 50px;
+    height: 350px;
   }
 }
