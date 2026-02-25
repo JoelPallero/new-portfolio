@@ -15,25 +15,32 @@ const usePortfolioItems = ({ quantity, category, tag }) => {
         const response = await fetch(`${base}json/portfolio.json`);
         let data = await response.json();
 
+        // Ignorar clientes sin URL de imagen (featured_image vacío o inexistente)
+        data = data.filter(
+          (item) => item.featured_image != null && String(item.featured_image).trim() !== ""
+        );
+
         // Filtramos por categoría si se especifica
         if (category) {
-          data = data.filter(item => item.categories.includes(category));
+          data = data.filter((item) => item.categories && item.categories.includes(category));
         }
 
         // Filtramos por etiqueta si se especifica
         if (tag) {
-          data = data.filter(item => item.tags.includes(tag));
+          data = data.filter((item) => item.tags && item.tags.includes(tag));
         }
 
-        // Filtramos por cantidad si se especifica
+        // Orden "del último hacia atrás": tomamos los últimos N y los mostramos con el último primero
         if (quantity) {
-          data = data.slice(0, quantity); // Tomamos solo los primeros "quantity" elementos
+          data = [...data.slice(-quantity)].reverse();
+        } else {
+          data = [...data].reverse();
         }
 
-        // Si no hay categoría ni etiqueta, simplemente traemos todos los elementos disponibles
         setItems(data);
       } catch (err) {
-        setError("There was a problem loading more information.");
+        console.error("Error loading portfolio items:", err);
+        setError("Hubo un problema al cargar la información del portafolio.");
       } finally {
         setLoading(false);
       }

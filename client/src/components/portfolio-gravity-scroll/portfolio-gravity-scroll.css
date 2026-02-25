@@ -1,0 +1,347 @@
+/* Gravity Scroll - Portfolio mobile */
+
+.gravity-scroll-container {
+  width: 100%;
+  padding: 24px 16px 80px;
+  position: relative;
+}
+
+.gravity-scroll-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.gravity-stack-slot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gravity-card {
+  width: 100%;
+  max-width: 340px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transform-origin: center center;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  touch-action: manipulation;
+}
+
+.gravity-card--stacked {
+  position: sticky;
+  margin-left: auto;
+  margin-right: auto;
+  will-change: transform;
+}
+
+/* Top: Screenshot / mockup */
+.gravity-card-image {
+  flex: 0 0 180px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gravity-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Bottom: Content area with glassmorphism */
+.gravity-card-content {
+  flex: 1;
+  position: relative;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.gravity-card-glass {
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.gravity-card-tags-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.gravity-card-tag {
+  position: relative;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.gravity-card-tag--featured {
+  background: #2BB2FC;
+  color: #ffffff;
+}
+
+.gravity-card-title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.gravity-card-description {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gravity-card-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.gravity-card-tech-tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gravity-card-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gravity-card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #222222;
+  background: #c9f31d;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.gravity-card:hover .gravity-card-button {
+  background: #e1ff33;
+  transform: scale(1.02);
+}
+
+/* Expanded overlay - full screen (por encima del header) */
+.gravity-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0;
+  cursor: pointer;
+}
+
+.gravity-expanded-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+}
+
+.gravity-expanded-glass {
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+
+.gravity-expanded-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px 5px;
+  max-width: 90%;
+  max-height: 85vh;
+  min-height: 50vh;
+  overflow-y: auto;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gravity-expanded-title {
+  margin: 0 0 12px;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.gravity-expanded-description {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 480px;
+  text-align: left;
+  letter-spacing: 0.6px;
+}
+
+.gravity-expanded-description p {
+  margin: 0 0 0.75em;
+}
+
+.gravity-expanded-description p:last-child {
+  margin-bottom: 0;
+}
+
+.gravity-expanded-description ul,
+.gravity-expanded-description ol {
+  margin: 0 0 0.75em;
+  padding-left: 1.25em;
+  text-align: left;
+}
+
+.gravity-expanded-description li {
+  margin-bottom: 0.25em;
+}
+
+.gravity-expanded-description strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.gravity-expanded-description a {
+  color: #c9f31d;
+  text-decoration: underline;
+}
+
+.gravity-expanded-description a:hover {
+  color: #e1ff33;
+}
+
+.gravity-expanded-link {
+  display: inline-block;
+  margin-top: auto;
+  padding: 12px 24px;
+  background: #c9f31d;
+  color: #222222;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.gravity-expanded-link:hover,
+.gravity-expanded-link:focus {
+  background: #e1ff33;
+  transform: scale(1.02);
+}
+
+.gravity-expanded-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.gravity-expanded-close:hover,
+.gravity-expanded-close:focus {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.gravity-expanded-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Loading & error */
+.gravity-scroll-loading,
+.gravity-scroll-error {
+  padding: 48px 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.gravity-scroll-error p {
+  margin: 0;
+}
+
+/* Prevent scroll on body when expanded */
+body.gravity-expanded-open {
+  overflow: hidden;
+}

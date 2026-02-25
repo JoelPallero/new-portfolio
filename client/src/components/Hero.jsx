@@ -1,4 +1,5 @@
 import Icons from "./Icons";
+import { memo } from "react";
 
 //styles and animations
 import "@as/hero.css";
@@ -9,154 +10,81 @@ const base = import.meta.env.BASE_URL?.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
+// Componente reutilizable para texto animado
+const AnimatedText = memo(({ children, delay = 0, className = "" }) => {
+  const animationConfig = {
+    initial: { y: 200 },
+    animate: {
+      y: [200, 0, 0, 0, 0, 0, 0, -200],
+    },
+    transition: {
+      duration: 4,
+      delay,
+      repeat: Infinity,
+      repeatType: "loop",
+      times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
+    },
+  };
+
+  return (
+    <motion.span className={className} {...animationConfig}>
+      {children}
+    </motion.span>
+  );
+});
+
+AnimatedText.displayName = "AnimatedText";
+
 const Hero = () => {
   return (
     <motion.div className="container hero-container">
       <div className="hero-text">
         <p>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            Joel
-          </motion.span>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            Pallero
-          </motion.span>
+          <AnimatedText>Joel</AnimatedText>
+          <AnimatedText delay={0.3}>Pallero</AnimatedText>
         </p>
 
         <p>
-          <motion.span
-            className="bold-title"
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.1,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            Frontend
-          </motion.span>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.25,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            dev
-          </motion.span>
+          <AnimatedText delay={0.1} className="bold-title">Frontend</AnimatedText>
+          <AnimatedText delay={0.25}>dev</AnimatedText>
         </p>
 
         <p>
-          <motion.span
-            className="bold-title"
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.2,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            Wordpress
-          </motion.span>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.5,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            dev
-          </motion.span>
+          <AnimatedText delay={0.2} className="bold-title">Wordpress</AnimatedText>
+          <AnimatedText delay={0.5}>dev</AnimatedText>
         </p>
 
         <p>
-          <motion.span
-            className="bold-title"
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            +3
-          </motion.span>
-          <motion.span
-            initial={{ y: 200 }}
-            animate={{
-              y: [200, 0, 0, 0, 0, 0, 0, -200],
-            }}
-            transition={{
-              duration: 4,
-              delay: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              times: [0, 0.1, 0.875, 0.875, 0.875, 0.875, 0.875, 1],
-            }}
-          >
-            years
-          </motion.span>
+          <AnimatedText delay={0.3} className="bold-title">+4</AnimatedText>
+          <AnimatedText delay={0.3}>years</AnimatedText>
         </p>
       </div>
 
       {/* Íconos sociales */}
       <div className="social-icons">
-        <a target="_blank" href="https://www.linkedin.com/in/joel-pallero/">
+        <a 
+          target="_blank" 
+          href="https://www.linkedin.com/in/joel-pallero/" 
+          rel="noopener noreferrer"
+          aria-label="Visitar perfil de LinkedIn"
+        >
           <Icons iconName="in"/>
         </a>
-        <a target="_blank" href="https://github.com/JoelPallero?tab=repositories">
+        <a 
+          target="_blank" 
+          href="https://github.com/JoelPallero?tab=repositories" 
+          rel="noopener noreferrer"
+          aria-label="Visitar perfil de GitHub"
+        >
           <Icons iconName="github"/>
         </a>
-        <a target="_blank" href={`${base}docs/Joel-Pallero-Resume.pdf`} download="resume-joel-pallero.pdf">
+        <a 
+          target="_blank" 
+          href={`${base}docs/Joel-Pallero-Resume.pdf`} 
+          download="resume-joel-pallero.pdf"
+          rel="noopener noreferrer"
+          aria-label="Descargar currículum vitae"
+        >
           <Icons iconName="download"/>
         </a>
         {/* <a target="_blank" href="https://wa.me/543512149461">
@@ -165,7 +93,11 @@ const Hero = () => {
       </div>
 
       {/* arrow to go down */}
-      <a href="#slider-dev" className="arrow">        
+      <a 
+        href="#slider-dev" 
+        className="arrow"
+        aria-label="Ir a la sección de herramientas de desarrollo"
+      >        
         <Icons iconName="down"/>
       </a>
     </motion.div>

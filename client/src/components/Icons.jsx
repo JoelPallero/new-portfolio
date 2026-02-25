@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Logo from '@a/logo.svg';
 
 const base = import.meta.env.BASE_URL?.endsWith("/")
@@ -18,16 +19,36 @@ const icons = {
   logo: Logo,
 };
 
-function Icons({iconName}){
+const Icons = memo(({iconName}) => {
   const iconSrc = icons[iconName];
   if (!iconSrc) return null;
 
-  return (
-    <>
-      <img src={iconSrc} alt={iconName} title={iconName === "download" ? "Download CV" : ""} />
-    </>
-  );
-}
+  const altTexts = {
+    logo: "Logo del sitio",
+    in: "Icono de LinkedIn",
+    github: "Icono de GitHub",
+    download: "Icono de descarga",
+    down: "Flecha hacia abajo",
+    close: "Cerrar",
+    burguer: "Menú hamburguesa",
+    wsp: "Icono de WhatsApp",
+    dev: "Icono de desarrollo",
+    grow: "Icono de crecimiento",
+    spark: "Icono de chispa"
+  };
 
+  const altText = altTexts[iconName] || `Icono ${iconName}`;
+  const isDecorative = iconName !== "down" && iconName !== "close";
+
+  return (
+    <img 
+      src={iconSrc} 
+      alt={altText} 
+      aria-hidden={isDecorative}
+    />
+  );
+});
+
+Icons.displayName = "Icons";
 
 export default Icons;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./portfolio-accordion.css";
 
@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL?.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const PortfolioAccordion = ({ category, quantity }) => {
+const PortfolioAccordion = memo(({ category, quantity }) => {
   const [clientsData, setClientsData] = useState([]);
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [currentImageIndices, setCurrentImageIndices] = useState({});
@@ -32,9 +32,9 @@ const PortfolioAccordion = ({ category, quantity }) => {
           );
         }
         
-        // Limitar cantidad si se especifica
+        // Tomar desde el último hacia atrás: los últimos N según quantity
         if (quantity) {
-          filteredData = filteredData.slice(0, quantity);
+          filteredData = [...filteredData.slice(-quantity)].reverse();
         }
         
         // Transformar datos al formato esperado por el componente
@@ -44,7 +44,9 @@ const PortfolioAccordion = ({ category, quantity }) => {
           gallery: item.gallery && item.gallery.length > 0 
             ? item.gallery 
             : (item.featured_image ? [item.featured_image] : []),
-          url: item.url || ""
+          url: item.url || "",
+          categories: item.categories || [],
+          long_description: item.long_description || ""
         }));
         
         setClientsData(transformedData);
@@ -255,6 +257,16 @@ const PortfolioAccordion = ({ category, quantity }) => {
             layout
             className={`branding-accordion-item ${isExpanded ? "expanded" : ""}`}
             onClick={() => handleToggle(index)}
+            role="button"
+            tabIndex={0}
+            aria-expanded={isExpanded}
+            aria-label={`${isExpanded ? "Cerrar" : "Abrir"} proyecto ${clientData.name}`}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleToggle(index);
+              }
+            }}
             transition={{
               layout: {
                 type: "spring",
@@ -279,40 +291,64 @@ const PortfolioAccordion = ({ category, quantity }) => {
                 </div>
               </div>
             ) : (
-              /* Cuando está expandido: slider detrás y título encima */
+              /* Cuando está expandido: slider + info abajo, panel a la izquierda */
               <div className="branding-accordion-expanded-wrapper">
-                {/* Panel expandido - galería/slider que ocupa todo el ancho */}
-                {clientData.gallery && clientData.gallery.length > 0 && (
-                  <motion.div
-                    className="branding-accordion-expanded"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                  >
-                    <div className="branding-accordion-gallery">
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={currentImageIndex}
-                          initial={{ opacity: 0 }}
-                          animate={{ 
-                            opacity: 1,
-                            transition: { duration: 0.2, ease: "easeIn" }
-                          }}
-                          exit={{ 
-                            opacity: 0,
-                            transition: { duration: 0.1, ease: "easeOut" }
-                          }}
-                          className="branding-accordion-gallery-image"
-                          style={{
-                            backgroundImage: `url(${currentImage || firstImage})`
-                          }}
-                        />
-                      </AnimatePresence>
-                    </div>
-                  </motion.div>
-                )}
-                {/* Panel cerrado posicionado encima del slider */}
+                <div className="branding-accordion-expanded-main">
+                  {/* Galería */}
+                  {clientData.gallery && clientData.gallery.length > 0 && (
+                    <motion.div
+                      className="branding-accordion-expanded"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <div className="branding-accordion-gallery">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={currentImageIndex}
+                            initial={{ opacity: 0 }}
+                            animate={{ 
+                              opacity: 1,
+                              transition: { duration: 0.2, ease: "easeIn" }
+                            }}
+                            exit={{ 
+                              opacity: 0,
+                              transition: { duration: 0.1, ease: "easeOut" }
+                            }}
+                            className="branding-accordion-gallery-image"
+                            style={{
+                              backgroundImage: `url(${currentImage || firstImage})`
+                            }}
+                          />
+                        </AnimatePresence>
+                      </div>
+                    </motion.div>
+                  )}
+                  {/* Info: 1 fila = pastillas + tarjeta de texto (blur solo en texto) */}
+                  <div className="branding-accordion-info">
+                    {(clientData.categories?.length > 0 || clientData.long_description) && (
+                      <div className="branding-accordion-info-row">
+                        {clientData.categories?.length > 0 && (
+                          <div className="branding-accordion-info-tags">
+                            {clientData.categories.slice(0, 3).map((cat) => (
+                              <span key={cat} className="branding-accordion-info-pill">{cat}</span>
+                            ))}
+                          </div>
+                        )}
+                        {clientData.long_description && (
+                          <div className="branding-accordion-info-text">
+                            <div
+                              className="branding-accordion-info-description"
+                              dangerouslySetInnerHTML={{ __html: clientData.long_description }}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {/* Panel cerrado posicionado encima a la izquierda */}
                 <div className={`branding-accordion-closed expanded-panel`}>
                   {/* Flecha con fondo blanco cuando está expandido */}
                   <div className="branding-accordion-arrow expanded-arrow">
@@ -331,7 +367,9 @@ const PortfolioAccordion = ({ category, quantity }) => {
       })}
     </div>
   );
-};
+});
+
+PortfolioAccordion.displayName = "PortfolioAccordion";
 
 export default PortfolioAccordion;
 

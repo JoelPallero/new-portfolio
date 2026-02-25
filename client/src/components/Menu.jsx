@@ -1,9 +1,9 @@
-import React from "react";
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Componente Menu
-const Menu = ({ 
+const Menu = memo(({ 
   menuType = "",
   routes = {},
   classMenu = "", 
@@ -17,10 +17,10 @@ const Menu = ({
   }
 
   return (
-    <nav className="nav-menu">
+    <nav className="nav-menu" aria-label="Menú de navegación">
       <ul className={classMenu}>
-        {menuItems.map(({ path, label }, index) => (
-          <li key={index}>
+        {menuItems.map(({ path, label }) => (
+          <li key={`${menuType}-${path}`}>
             <motion.div
               className="item-menu-container"
               initial={{ y: -200 }}
@@ -38,6 +38,8 @@ const Menu = ({
       </ul>
     </nav>
   );
-};
+});
+
+Menu.displayName = "Menu";
 
 export default Menu;

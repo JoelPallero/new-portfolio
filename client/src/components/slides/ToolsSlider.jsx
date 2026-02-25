@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import "@as/slider-tool.css";
 import { motion } from "framer-motion";
 import Icons from "../Icons";
@@ -50,7 +50,7 @@ const mkt = {
   analitica7: "Google Analytics",
 };
 
-const ToolsSlider = ({ place = "dev" }) => {
+const ToolsSlider = memo(({ place = "dev" }) => {
   const items = place === "mkt" ? mkt : dev;
 
   return (
@@ -65,18 +65,20 @@ const ToolsSlider = ({ place = "dev" }) => {
         <div className="slider-inner">
           {[...Array(10)].map((_, index) =>
             Object.entries(items).map(([key, text]) => (
-              <React.Fragment key={`${key}-${index}`}>
+              <span key={`${key}-${index}`} className="slider-item-wrapper">
                 <span className="slider-item">
                   {text}
                 </span>
                 {items === dev ? (<Icons iconName="dev"/>) : (<Icons iconName="grow"/>)}
-              </React.Fragment>
+              </span>
             ))
           )}
         </div>
       </div>
     </motion.section>
   );
-};
+});
+
+ToolsSlider.displayName = "ToolsSlider";
 
 export default ToolsSlider;

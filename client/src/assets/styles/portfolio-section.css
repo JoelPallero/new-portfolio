@@ -33,7 +33,7 @@
   background-color: #222222;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
   padding: 20px 20px 50px;
 }
 
@@ -71,12 +71,6 @@
 
 .portfolio-title{
   font-size: 54px;
-  text-transform: uppercase;
-}
-
-.portfolio-excerpt{
-  font-size: 15px;
-  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -169,10 +163,6 @@
   }
   .portfolio-item h2{
     font-size: 32px;
-  }
-  .portfolio-excerpt{
-    font-size: 23px;
-    font-weight: 300;
   }
   .portfolio-title{
     font-size: 120px;

@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import usePortfolioItems from "../hooks/usePortfolioItems";
 
 //styles and animations
 import {motion} from 'framer-motion';
 
-const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
+const PortfolioItems = memo(({ handleMouseEnter, handleMouseLeave }) => {
   const [quantity, setQuantity] = useState(12);
   const [category, setCategory] = useState("");
   const [tag, setTag] = useState("");
@@ -15,8 +15,21 @@ const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
     tag,
   });
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) {
+    return (
+      <div role="status" aria-live="polite" aria-label="Cargando proyectos">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+  
+  if (error) {
+    return (
+      <div role="alert" aria-live="assertive">
+        <p>Error al cargar los proyectos: {error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="grid-portfolio">
@@ -30,8 +43,6 @@ const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
             onMouseEnter={() => handleMouseEnter(backgroundImage || "/logo.svg")}
             onMouseLeave={handleMouseLeave}
             whileHover={{ scale: 1.05 }}
-            onHoverStart={event => {}}
-            onHoverEnd={event => {}}
           >
             <h2>{item.title}</h2>
           </motion.div>
@@ -39,6 +50,8 @@ const PortfolioItems = ({ handleMouseEnter, handleMouseLeave }) => {
       })}
     </div>
   );
-};
+});
+
+PortfolioItems.displayName = "PortfolioItems";
 
 export default PortfolioItems;

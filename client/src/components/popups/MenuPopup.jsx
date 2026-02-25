@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import Menu from "@/components/Menu";
 
 import Icons from "../Icons";
@@ -8,12 +8,15 @@ import { routesConfig } from "@/config/routes";
 import "@as/menuPopup.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-const MenuPopup = ({ isOpen, onClose }) => {
+const MenuPopup = memo(({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           className="popup-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú de navegación"
           initial={{
             y: -1140,
             scale: 0.25,
@@ -38,6 +41,7 @@ const MenuPopup = ({ isOpen, onClose }) => {
             <motion.button
               className="close-button"
               onClick={onClose}
+              aria-label="Cerrar menú"
               initial={{
                 scale: 0,
               }}
@@ -63,6 +67,8 @@ const MenuPopup = ({ isOpen, onClose }) => {
       )}
     </AnimatePresence>
   );
-};
+});
+
+MenuPopup.displayName = "MenuPopup";
 
 export default MenuPopup;

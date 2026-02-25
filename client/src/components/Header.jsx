@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { memo } from "react";
 import Icons from './Icons';
 
 //styles & animations
@@ -10,8 +9,7 @@ const base = import.meta.env.BASE_URL?.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const Header = ({onTogglePopup}) => {
-  const [showPopuup, setShowPopup] = useState(false);
+const Header = memo(({onTogglePopup}) => {
 
   return (
     <header className="header">
@@ -19,6 +17,7 @@ const Header = ({onTogglePopup}) => {
         <motion.a
           className="logo-img"
           href={`${base}`}
+          aria-label="Ir al inicio"
           initial={{
             y: -250,
           }}
@@ -58,6 +57,8 @@ const Header = ({onTogglePopup}) => {
       </div>
     </header>
   );
-};
+});
+
+Header.displayName = "Header";
 
 export default Header;

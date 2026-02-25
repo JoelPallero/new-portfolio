@@ -188,6 +188,93 @@
     overflow: hidden;
 }
 
+.branding-accordion-expanded-main {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Bloque info flotante (categorías + descripción) - encima de la imagen, abajo a la derecha, solo desktop */
+.branding-accordion-info {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .branding-accordion-info {
+        display: block;
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        left: auto;
+        z-index: 2;
+    }
+
+    .branding-accordion-info-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 16px;
+    }
+
+    .branding-accordion-info-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .branding-accordion-info-pill {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        background-color: #212121;
+        color: #ffffff;
+    }
+
+    .branding-accordion-info-text {
+        padding: 16px 20px;
+        background-color: #ffffff7e;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 16px;
+        max-width: 520px;
+    }
+
+    .branding-accordion-info-description {
+        font-size: 14px;
+        line-height: 1.2;
+        color: #222222;
+        text-align: left;
+    }
+
+    .branding-accordion-info-description p {
+        margin: 0 0 0.4em;
+    }
+
+    .branding-accordion-info-description ul,
+    .branding-accordion-info-description ol {
+        margin: 0 0 0.4em;
+        padding-left: 1.2em;
+        text-align: left;
+    }
+
+    .branding-accordion-info-description li {
+        margin-bottom: 0.2em;
+    }
+
+    .branding-accordion-info-description a {
+        color: #222222;
+        text-decoration: underline;
+    }
+}
+
 /* Panel cerrado cuando está expandido - posicionado encima del slider */
 .branding-accordion-closed.expanded-panel {
     width: 100px;
@@ -366,21 +453,25 @@
     }
 
     .branding-accordion-name span {
-        font-size: 70px;
+        font-size: 66px;
     }
 
     .branding-accordion-expanded-wrapper {
+        height: calc(100vh - var(--header-height, 0px));
+    }
+
+    .branding-accordion-expanded-main {
         height: calc(100vh - var(--header-height, 0px));
     }
     
     .branding-accordion-expanded {
         flex: 1;
         min-width: 0;
-        height: calc(100vh - var(--header-height, 0px));
+        min-height: 0;
     }
     
     .branding-accordion-gallery {
-        height: calc(100vh - var(--header-height, 0px));
+        height: 100%;
     }
     
     .branding-accordion-closed.expanded-panel {
