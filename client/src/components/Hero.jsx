@@ -4,7 +4,7 @@ import { memo } from "react";
 //styles and animations
 import "@as/hero.css";
 import "@as/social-icons.css";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const base = import.meta.env.BASE_URL?.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL?.endsWith("/")
 // Componente reutilizable para texto animado
 const AnimatedText = memo(({ children, delay = 0, className = "" }) => {
   const animationConfig = {
-    initial: { y: 200 },
+    initial: { y: 0 },
     animate: {
       y: [200, 0, 0, 0, 0, 0, 0, -200],
     },
@@ -27,9 +27,9 @@ const AnimatedText = memo(({ children, delay = 0, className = "" }) => {
   };
 
   return (
-    <motion.span className={className} {...animationConfig}>
+    <m.span className={className} {...animationConfig}>
       {children}
-    </motion.span>
+    </m.span>
   );
 });
 
@@ -37,7 +37,7 @@ AnimatedText.displayName = "AnimatedText";
 
 const Hero = () => {
   return (
-    <motion.div className="container hero-container">
+    <m.div className="container hero-container">
       <div className="hero-text">
         <p>
           <AnimatedText>Joel</AnimatedText>
@@ -100,7 +100,7 @@ const Hero = () => {
       >        
         <Icons iconName="down"/>
       </a>
-    </motion.div>
+    </m.div>
   );
 };
 

@@ -7,6 +7,13 @@
   align-items: center;
 }
 
+.footer.footer-store {
+  height: auto;
+  min-height: 200px;
+  padding: 60px 0;
+  justify-content: center;
+}
+
 .footer .logo-img img{
   width: 250px;
 }
@@ -107,7 +114,7 @@
 } 
 
 @media (min-width: 1366px) {
-  .footer{
+  .footer:not(.footer-store){
     height: 60dvh;
     padding: 100px 0;
   }

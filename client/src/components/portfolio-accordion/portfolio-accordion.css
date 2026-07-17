@@ -59,6 +59,7 @@
     transition: all 0.3s ease;
     flex-shrink: 0;
     width: 100px;
+    will-change: width, flex;
 }
 
 .branding-accordion-item.expanded {
@@ -325,6 +326,7 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    will-change: opacity;
 }
 
 /* Sticky amarillo animado - solo visible en hover */
@@ -478,4 +480,26 @@
         height: calc(100vh - var(--header-height, 0px));
     }
 }
+/* Skeleton Styles */
+.branding-accordion-container.skeleton {
+    background-color: #FFDF69;
+}
 
+.branding-accordion-item.skeleton {
+    pointer-events: none;
+    cursor: default;
+    background-color: #FFDF69;
+}
+
+.skeleton-line {
+    background: linear-gradient(90deg, #E1C025 25%, #FFDF69 50%, #E1C025 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}

@@ -1,4 +1,5 @@
 .hero-container {
+  will-change: transform;
   height: 100%;
   background: linear-gradient(to right, #242424 50%, #303030);
   display: flex;
@@ -16,6 +17,7 @@
 
 .hero-text p {
   line-height: 40px;
+  min-height: 40px;
   overflow: hidden;
   font-size: 32px;
   font-weight: 500;
@@ -36,7 +38,8 @@
 .arrow img {
   position: absolute;
   width: 30px;
-  height: 150px;
+  height: auto;
+  aspect-ratio: 44 / 193;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
@@ -46,6 +49,7 @@
   .hero-text p {
     font-size: 44px;
     line-height: 46px;
+    min-height: 46px;
   }
 }
 
@@ -53,6 +57,7 @@
   .hero-text p {
     font-size: 48px;
     line-height: 54px;
+    min-height: 54px;
   }
 
   .hero-container {
@@ -61,7 +66,8 @@
 
   .arrow img {
     width: 40px;
-    height: 250px;
+    height: auto;
+    aspect-ratio: 44 / 193;
     right: 50px;
   }
 }
@@ -70,6 +76,7 @@
   .hero-text p {
     font-size: 54px;
     line-height: 60px;
+    min-height: 60px;
     gap: 24px;
   }
 
@@ -79,7 +86,8 @@
 
   .arrow img {
     width: 50px;
-    height: 250px;
+    height: auto;
+    aspect-ratio: 44 / 193;
   }
 }
 
@@ -99,11 +107,13 @@
   .hero-text p {
     font-size: 76px;
     line-height: 73px;
+    min-height: 73px;
     gap: 24px;
   }
 
   .arrow img {
     width: 70px;
-    height: 350px;
+    height: auto;
+    aspect-ratio: 44 / 193;
   }
 }

@@ -4,6 +4,8 @@ const base = import.meta.env.BASE_URL?.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
+let portfolioCache = null;
+
 const usePortfolioItems = ({ quantity, category, tag }) => {
   const [items, setItems] = useState([]); // Para almacenar los items
   const [loading, setLoading] = useState(true); // Para gestionar el estado de carga
@@ -12,8 +14,10 @@ const usePortfolioItems = ({ quantity, category, tag }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${base}json/portfolio.json`);
-        let data = await response.json();
+        if (!portfolioCache) {
+          portfolioCache = fetch(`${base}json/portfolio.json`).then(res => res.json());
+        }
+        let data = await portfolioCache;
 
         // Ignorar clientes sin URL de imagen (featured_image vacío o inexistente)
         data = data.filter(

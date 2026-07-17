@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /docs/
+
+Sitemap: https://joelpallero.com.ar/sitemap.xml

@@ -16,14 +16,30 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-/* 
-.nav-button {
-  width: 60px;
-  cursor: pointer;
-  background-color: transparent;
-  padding: 16px 10px 10px;
-  border: none;
-} */
+.header-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: rgba(36, 36, 36, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.nav-link:hover {
+  background-color: rgba(60, 60, 60, 0.9);
+  transform: translateY(-2px);
+}
 
 .logo-img{
   background-color: #242424bc;

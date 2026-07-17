@@ -1,5 +1,6 @@
 import { memo } from "react";
 import Icons from './Icons';
+import { useLocation } from "react-router-dom";
 
 //styles and animations, if..
  import '@as/footer.css'
@@ -9,9 +10,12 @@ const base = import.meta.env.BASE_URL?.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 
 const Footer = memo(() => {
+  const location = useLocation();
+  const isStore = location.pathname.startsWith("/store");
+
   return (
-    <footer className="medium-container footer">
-      <div className="grid-footer-container">
+    <footer className={`footer ${isStore ? 'footer-store' : 'medium-container'}`}>
+      <div className={isStore ? 'footer-store-container' : 'grid-footer-container'}>
           <section className="footer-section">
             <a 
               className="logo-img" 
@@ -21,47 +25,49 @@ const Footer = memo(() => {
               <Icons iconName="logo"/>
             </a>
           </section>
-          <section className="footer-section">
-            <div className="social-icons">
-              <a 
-                target="_blank" 
-                href="https://www.linkedin.com/in/joel-pallero/" 
-                rel="noopener noreferrer"
-                aria-label="Visitar perfil de LinkedIn"
-              >
-                <Icons iconName="in"/>
-              </a>
-              <a 
-                target="_blank" 
-                href="https://github.com/JoelPallero?tab=repositories" 
-                rel="noopener noreferrer"
-                aria-label="Visitar perfil de GitHub"
-              >
-                <Icons iconName="github"/>
-              </a>
-              <a 
-                target="_blank" 
-                href={`${base}docs/Joel-Pallero-Resume.pdf`} 
-                download="resume-joel-pallero.pdf"
-                rel="noopener noreferrer"
-                aria-label="Descargar currículum vitae"
-              >
-                <Icons iconName="download"/>
-              </a>
-              {/* <a target="_blank" href="https://wa.me/543512149461">
-                <Icons iconName="wsp"/>
-              </a> */}
-            </div>
-          </section>
+          
+          {!isStore && (
+            <>
+              <section className="footer-section">
+                <div className="social-icons">
+                  <a 
+                    target="_blank" 
+                    href="https://www.linkedin.com/in/joel-pallero/" 
+                    rel="noopener noreferrer"
+                    aria-label="Visitar perfil de LinkedIn"
+                  >
+                    <Icons iconName="in"/>
+                  </a>
+                  <a 
+                    target="_blank" 
+                    href="https://github.com/JoelPallero?tab=repositories" 
+                    rel="noopener noreferrer"
+                    aria-label="Visitar perfil de GitHub"
+                  >
+                    <Icons iconName="github"/>
+                  </a>
+                  <a 
+                    target="_blank" 
+                    href={`${base}docs/Joel-Pallero-Resume.pdf`} 
+                    download="resume-joel-pallero.pdf"
+                    rel="noopener noreferrer"
+                    aria-label="Descargar currículum vitae"
+                  >
+                    <Icons iconName="download"/>
+                  </a>
+                </div>
+              </section>
 
-          <section className="footer-section">
-            <div className="footer-tags">
-              <p>#SEO</p>
-              <p>#E-Commerce</p>
-              <p>#Landing page</p>
-              <p>#Web performance</p>
-            </div>
-          </section>
+              <section className="footer-section">
+                <div className="footer-tags">
+                  <p>#SEO</p>
+                  <p>#E-Commerce</p>
+                  <p>#Landing page</p>
+                  <p>#Web performance</p>
+                </div>
+              </section>
+            </>
+          )}
         </div>
     </footer>
   );

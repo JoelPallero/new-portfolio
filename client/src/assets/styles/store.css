@@ -1,0 +1,349 @@
+.page-padding {
+  padding-top: 140px; /* Adjust for fixed header */
+  min-height: 100vh;
+  background-color: #242424;
+  color: #ffffff;
+}
+
+/* Store Page Styles */
+.store-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.store-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #aaaaaa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.store-header p {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  padding-bottom: 80px;
+}
+
+.product-card {
+  background: rgba(40, 40, 40, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-info {
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
+}
+
+.product-card-info:hover {
+  text-decoration: none !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(50, 50, 50, 0.6);
+}
+
+.product-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Detail Page Styles */
+.breadcrumb {
+  margin-bottom: 40px;
+}
+
+.breadcrumb a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+}
+
+.product-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.product-info-main .version-tag {
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.product-info-main h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.product-info-main .tagline {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.product-info-main .description {
+  font-size: 1.1rem;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.product-screenshot-container {
+  aspect-ratio: 16/10;
+  background: #252525;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.product-screenshot-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.02));
+}
+
+.screenshot-placeholder span {
+  color: #444;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card-dark {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 60px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+}
+
+.card-dark h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.benefits-section ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.benefits-section li {
+  font-size: 1.1rem;
+  color: #999;
+  padding-left: 25px;
+  position: relative;
+}
+
+.benefits-section li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-label {
+  color: #888;
+  font-weight: 500;
+}
+
+.spec-value {
+  color: #fff;
+  text-align: right;
+  max-width: 60%;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.plan-item {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.plan-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.plan-item p {
+  color: #888;
+  line-height: 1.6;
+}
+
+.faqs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.faq-item h5 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.faq-item p {
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-primary-large {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  padding: 10px 20px;
+}
+
+.btn-primary:hover {
+  background: #eee;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-primary-large {
+  background: #fff;
+  color: #000;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary-large:hover {
+  background: #eee;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+}
+
+/* Footer Store */
+.footer-store {
+  background-color: #242424;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-store-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .product-hero {
+    grid-template-columns: 1fr;
+  }
+  
+  .store-header h1 { font-size: 2.5rem; }
+  .product-info-main h1 { font-size: 3rem; }
+  
+  .benefits-section ul, .faqs-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -40,13 +40,21 @@ const Icons = memo(({ iconName }) => {
   const altText = altTexts[iconName] || `Icono ${iconName}`;
   const isDecorative = iconName !== "down" && iconName !== "close";
 
+  const isHighPriority = iconName === "logo" || iconName === "down";
+
   return (
     <img
       src={iconSrc}
       alt={altText}
       aria-hidden={isDecorative}
-      width={iconName === "logo" ? "200" : "36"}
-      height={iconName === "logo" ? "100" : "36"}
+      width={iconName === "logo" ? "180" : (iconName === "down" ? "70" : "36")}
+      height={iconName === "logo" ? "100" : (iconName === "down" ? "307" : "36")}
+      style={{
+        aspectRatio: iconName === "logo" ? "180 / 100" : (iconName === "down" ? "70 / 307" : "1 / 1")
+      }}
+      fetchpriority={isHighPriority ? "high" : "auto"}
+      loading={isHighPriority ? "eager" : "lazy"}
+      decoding="async"
     />
   );
 });

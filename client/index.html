@@ -2,30 +2,45 @@
 <html lang="es">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-M4F82JW8');</script>
-  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joel Pallero - Web Developer</title>
+  
   <meta name="google-site-verification" content="QodTwV99uXR22TSstdBFFb8iGu2hvB97ptAtOsaodos" />
   <meta name="description"
     content="Joel Pallero - Frontend & Wordpress Developer with +4 years of experience. Specializing in high-performance web development and creative solutions." />
 
-  <!-- Preload critical fonts -->
-  <link rel="preload" href="/src/assets/styles/fonts/CreatoDisplay-Black.woff2" as="font" type="font/woff2"
-    crossorigin />
-  <link rel="preload" href="/src/assets/styles/fonts/CreatoDisplay-ExtraBold.woff2" as="font" type="font/woff2"
-    crossorigin />
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-  <meta charset="UTF-8" />
+  <!-- Critical resource preloads for LCP -->
+  <link rel="preload" href="/src/assets/styles/fonts/CreatoDisplay-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/src/assets/styles/fonts/CreatoDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/src/assets/styles/fonts/CreatoDisplay-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/src/assets/styles/fonts/CreatoDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  
+  <!-- Preload above-the-fold icons -->
+  <link rel="preload" href="/assets/icons/down.png" as="image" />
+
   <link rel="icon" type="image/svg+xml" href="/logofav.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joel Pallero - Web Developer</title>
+
+  <!-- Google Tag Manager (Optimized loading) -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+              new Date().getTime(), event: 'gtm.js'
+          }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+              'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M4F82JW8');
+      }, 3000); // Delay GTM by 3s to prioritize main content
+    });
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body>

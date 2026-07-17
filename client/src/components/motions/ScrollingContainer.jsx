@@ -1,8 +1,8 @@
-import {motion} from 'framer-motion'
+import { m } from 'framer-motion'
 
 const ScrollingContainer = () => {
   return (
-    <motion.div
+    <m.div
       className='container'
       initial={{
         scale: .50,
@@ -14,7 +14,7 @@ const ScrollingContainer = () => {
         }
       }}
     >
-    </motion.div>
+    </m.div>
   );
 }
 

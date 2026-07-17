@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import usePortfolioItems from "../hooks/usePortfolioItems";
 
 //styles and animations
-import {motion} from 'framer-motion';
+import { m } from 'framer-motion';
 
 const PortfolioItems = memo(({ handleMouseEnter, handleMouseLeave }) => {
   const [quantity, setQuantity] = useState(12);
@@ -37,7 +37,7 @@ const PortfolioItems = memo(({ handleMouseEnter, handleMouseLeave }) => {
         const backgroundImage = item.featured_image || "";
 
         return (
-          <motion.div
+          <m.div
             key={item.id}
             className="portfolio-item"
             onMouseEnter={() => handleMouseEnter(backgroundImage || "/logo.svg")}
@@ -45,7 +45,7 @@ const PortfolioItems = memo(({ handleMouseEnter, handleMouseLeave }) => {
             whileHover={{ scale: 1.05 }}
           >
             <h2>{item.title}</h2>
-          </motion.div>
+          </m.div>
         );        
       })}
     </div>

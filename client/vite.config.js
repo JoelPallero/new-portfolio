@@ -15,6 +15,14 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, '../dist')
+    outDir: path.resolve(__dirname, '../dist'),
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-framer': ['framer-motion'],
+        },
+      },
+    }
   }
 })

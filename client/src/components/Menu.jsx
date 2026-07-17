@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // Componente Menu
 const Menu = memo(({ 
@@ -19,9 +19,9 @@ const Menu = memo(({
   return (
     <nav className="nav-menu" aria-label="Menú de navegación">
       <ul className={classMenu}>
-        {menuItems.map(({ path, label }) => (
+        {menuItems.map(({ path, label }, index) => (
           <li key={`${menuType}-${path}`}>
-            <motion.div
+            <m.div
               className="item-menu-container"
               initial={{ y: -200 }}
               animate={{ y: 0 }}
@@ -32,7 +32,7 @@ const Menu = memo(({
               <Link to={path} onClick={onClose}>
                 {label}
               </Link>
-            </motion.div>
+            </m.div>
           </li>
         ))}
       </ul>

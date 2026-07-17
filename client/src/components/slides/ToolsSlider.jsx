@@ -1,6 +1,6 @@
 import { memo } from "react";
 import "@as/slider-tool.css";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Icons from "../Icons";
 
 const dev = {
@@ -54,7 +54,7 @@ const ToolsSlider = memo(({ place = "dev" }) => {
   const items = place === "mkt" ? mkt : dev;
 
   return (
-    <motion.section
+    <m.section
       className="slider-container"
       id={place === "dev" ? "slider-dev" : "slider-mkt"}
       initial={{ opacity: 0, scale: 0.5 }}
@@ -75,7 +75,7 @@ const ToolsSlider = memo(({ place = "dev" }) => {
           )}
         </div>
       </div>
-    </motion.section>
+    </m.section>
   );
 });
 

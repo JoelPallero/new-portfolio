@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, useCallback, memo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import "./portfolio-accordion.css";
 
 const base = import.meta.env.BASE_URL?.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+
+let portfolioCache = null;
 
 const PortfolioAccordion = memo(({ category, quantity }) => {
   const [clientsData, setClientsData] = useState([]);
@@ -19,8 +21,10 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
   useEffect(() => {
     const loadPortfolioData = async () => {
       try {
-        const response = await fetch(`${base}json/portfolio.json`);
-        const portfolioData = await response.json();
+        if (!portfolioCache) {
+          portfolioCache = fetch(`${base}json/portfolio.json`).then(res => res.json());
+        }
+        const portfolioData = await portfolioCache;
         
         // Filtrar items que tengan título (eliminar vacíos)
         let filteredData = portfolioData.filter(item => item.title && item.title.trim() !== "");
@@ -58,15 +62,12 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
         });
         setCurrentImageIndices(initialIndices);
         
-        // Abrir la última solapa por defecto después de que los datos estén cargados
+        // Abrir la última solapa por defecto - hacerlo síncronamente con los datos
         if (transformedData.length > 0) {
           const lastIndex = transformedData.length - 1;
-          // Usar setTimeout para asegurar que el estado se actualice correctamente
-          setTimeout(() => {
-            setExpandedIndex(lastIndex);
-            isExpandedRefs.current[lastIndex] = true;
-            lastExpandedIndexRef.current = lastIndex;
-          }, 0);
+          setExpandedIndex(lastIndex);
+          isExpandedRefs.current[lastIndex] = true;
+          lastExpandedIndexRef.current = lastIndex;
         }
       } catch (error) {
         console.error("Error loading portfolio data:", error);
@@ -213,7 +214,20 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
   }, [expandedIndex, clientsData]);
 
   if (!clientsData || clientsData.length === 0) {
-    return null;
+    const skeletonCount = quantity || 5;
+    return (
+      <div className="branding-accordion-container skeleton" style={{ minHeight: "100vh" }}>
+        {[...Array(skeletonCount)].map((_, i) => (
+          <div key={`skeleton-${i}`} className="branding-accordion-item skeleton">
+            <div className="branding-accordion-closed">
+               <div className="branding-accordion-name">
+                 <div className="skeleton-line" style={{ width: "100px", height: "20px", background: "#333" }} />
+               </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   }
 
   // Función para obtener la ruta de la imagen
@@ -252,7 +266,7 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
           : null;
 
         return (
-          <motion.div
+          <m.div
             key={clientData.id || `client-${clientData.name}-${index}`}
             layout
             className={`branding-accordion-item ${isExpanded ? "expanded" : ""}`}
@@ -296,7 +310,7 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
                 <div className="branding-accordion-expanded-main">
                   {/* Galería */}
                   {clientData.gallery && clientData.gallery.length > 0 && (
-                    <motion.div
+                    <m.div
                       className="branding-accordion-expanded"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -305,7 +319,7 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
                     >
                       <div className="branding-accordion-gallery">
                         <AnimatePresence mode="wait">
-                          <motion.div
+                          <m.div
                             key={currentImageIndex}
                             initial={{ opacity: 0 }}
                             animate={{ 
@@ -323,7 +337,7 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
                           />
                         </AnimatePresence>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                   {/* Info: 1 fila = pastillas + tarjeta de texto (blur solo en texto) */}
                   <div className="branding-accordion-info">
@@ -362,7 +376,7 @@ const PortfolioAccordion = memo(({ category, quantity }) => {
                 </div>
               </div>
             )}
-          </motion.div>
+          </m.div>
         );
       })}
     </div>

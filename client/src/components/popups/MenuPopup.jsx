@@ -6,13 +6,13 @@ import { routesConfig } from "@/config/routes";
 
 //styles and animations
 import "@as/menuPopup.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const MenuPopup = memo(({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
+        <m.div
           className="popup-menu"
           role="dialog"
           aria-modal="true"
@@ -38,7 +38,7 @@ const MenuPopup = memo(({ isOpen, onClose }) => {
           }}
         >
           <div className="medium-container popup-content">
-            <motion.button
+            <m.button
               className="close-button"
               onClick={onClose}
               aria-label="Cerrar menú"
@@ -55,7 +55,7 @@ const MenuPopup = memo(({ isOpen, onClose }) => {
               <Icons 
                 iconName="close"
               />
-            </motion.button>
+            </m.button>
             <Menu
               menuType="main"
               routes={routesConfig}
@@ -63,7 +63,7 @@ const MenuPopup = memo(({ isOpen, onClose }) => {
               onClose={onClose}
             />
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

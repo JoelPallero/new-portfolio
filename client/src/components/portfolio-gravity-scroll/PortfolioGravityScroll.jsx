@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, memo } from "react";
 import {
-  motion,
+  m,
   AnimatePresence,
   useScroll,
   useVelocity,
@@ -46,7 +46,7 @@ const GravityCard = memo(({ item, index, velocity, onTap }) => {
   const isFeatured = item.categories?.includes("featured") || item.tags?.includes("featured");
 
   return (
-    <motion.div
+    <m.div
       layoutId={`gravity-card-${item.id}`}
       className="gravity-card gravity-card--stacked"
       style={{
@@ -103,7 +103,7 @@ const GravityCard = memo(({ item, index, velocity, onTap }) => {
           <span className="gravity-card-button">ver más</span>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 });
 
@@ -113,7 +113,7 @@ const ExpandedOverlay = memo(({ item, onClose }) => {
   const imageUrl = getImageUrl(item.featured_image);
 
   return (
-    <motion.div
+    <m.div
       layoutId={`gravity-card-${item.id}`}
       className="gravity-expanded"
       initial={{ opacity: 0 }}
@@ -162,7 +162,7 @@ const ExpandedOverlay = memo(({ item, onClose }) => {
           <path d="M18 6L6 18M6 6l12 12" />
         </svg>
       </button>
-    </motion.div>
+    </m.div>
   );
 });
 
